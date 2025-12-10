@@ -1,0 +1,11 @@
+#!/bin/sh
+PROTBUF_INSTALL=${INSTALLDIR}/protobuf
+cmake -S .. \
+	-B . \
+	-G Ninja   \
+	-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+	-DCMAKE_BUILD_TYPE=Release   \
+	-DCMAKE_INSTALL_PREFIX=${PROTBUF_INSTALL} \
+    -Dprotobuf_BUILD_TESTS=OFF \
+    -Dprotobuf_BUILD_SHARED_LIBS=ON
+

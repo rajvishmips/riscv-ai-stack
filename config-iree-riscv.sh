@@ -1,0 +1,16 @@
+#!/bin/sh
+export IREE_INSTALL_HOST=${INSTALLDIR}/iree-install-x86
+export IREE_INSTALL_RVV=${INSTALLDIR}/iree-install-rvv
+export RISCV_TOOLCHAIN_ROOT=${INSTALLDIR}/riscv_tools/toolchain/clang/linux/RISCV
+IREE_BUILD_RVV=./build-rvv
+cmake -GNinja \
+    -B${IREE_BUILD_RVV} \
+	-DCMAKE_TOOLCHAIN_FILE="./build_tools/cmake/riscv.toolchain.cmake" \
+	-DIREE_HOST_BIN_DIR=${IREE_INSTALL_HOST}/bin/ \
+    -DCMAKE_INSTALL_PREFIX=${IREE_INSTALL_RVV} \
+	-DRISCV_CPU=linux-riscv_64 \
+	-DIREE_BUILD_COMPILER=OFF \
+	-DCMAKE_BUILD_WITH_INSTALL_RPATH=TRUE \
+	-DRISCV_TOOLCHAIN_ROOT=${RISCV_TOOLCHAIN_ROOT} \
+	-DIREE_ENABLE_CPUINFO=OFF
+
