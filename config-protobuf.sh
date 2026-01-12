@@ -1,11 +1,14 @@
 #!/bin/sh
 PROTBUF_INSTALL=${INSTALLDIR}/protobuf
+ABSEIL_INSTALL=${INSTALLDIR}/abseil
 cmake -S .. \
 	-B . \
 	-G Ninja   \
-	-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 	-DCMAKE_BUILD_TYPE=Release   \
 	-DCMAKE_INSTALL_PREFIX=${PROTBUF_INSTALL} \
     -Dprotobuf_BUILD_TESTS=OFF \
-    -Dprotobuf_BUILD_SHARED_LIBS=ON
-
+    -Dprotobuf_BUILD_SHARED_LIBS=ON \
+    -Dprotobuf_ABSL_PROVIDER=package \
+    -DCMAKE_PREFIX_PATH=${ABSEIL_INSTALL} \
+    -DCMAKE_CXX_STANDARD=17 \
+    -Dprotobuf_BUILD_TESTS=OFF

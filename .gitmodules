@@ -16,3 +16,6 @@
 [submodule "iree"]
 	path = iree
 	url = https://github.com/openxla/iree.git
+[submodule "qemu"]
+	path = qemu
+	url = https://github.com/qemu/qemu.git
