@@ -10,3 +10,6 @@
 [submodule "onnx-mlir"]
 	path = onnx-mlir
 	url = https://github.com/onnx/onnx-mlir.git
+[submodule "llvm-project"]
+	path = llvm-project
+	url = https://github.com/llvm/llvm-project.git
