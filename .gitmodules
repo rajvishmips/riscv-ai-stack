@@ -13,3 +13,6 @@
 [submodule "llvm-project"]
 	path = llvm-project
 	url = https://github.com/llvm/llvm-project.git
+[submodule "iree"]
+	path = iree
+	url = https://github.com/openxla/iree.git
