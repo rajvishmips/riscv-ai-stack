@@ -7,6 +7,3 @@
 [submodule "riscv-gnu-toolchain"]
 	path = riscv-gnu-toolchain
 	url = https://github.com/riscv/riscv-gnu-toolchain.git
-[submodule "onnx-mlir"]
-	path = onnx-mlir
-	url = https://github.com/onnx/onnx-mlir.git
